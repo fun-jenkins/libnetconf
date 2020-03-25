@@ -2937,7 +2937,7 @@ fi
 			as_fn_error $? "Missing development package of libxml2." "$LINENO" 5
 		fi
 		CFLAGS="$CFLAGS `$withval/xml2-config --prefix=$lt_sysroot/usr/ --cflags`"
-		LIBXML2_LIBS="`$withval/xml2-config --prefix=$lt_sysroot/usr/ -libs`"
+		LIBXML2_LIBS="`$withval/xml2-config --prefix=$lt_sysroot/usr/ --libs`"
 		LIBS="$LIBXML2_LIBS $LIBS"
 		WITH_LIBXML2="$withval"
 		CONFIGURE_PARAMS="--with-libxml2=$withval $CONFIGURE_PARAMS"
@@ -11974,7 +11974,7 @@ fi
 	if test "$XML2_CONFIG" = "no"; then
 		as_fn_error $? "Missing development package of libxml2." "$LINENO" 5
 	fi
-	CFLAGS="$CFLAGS `xml2-config --prefix=$lt_sysroot/usr/ -cflags`"
+	CFLAGS="$CFLAGS `xml2-config --prefix=$lt_sysroot/usr/ --cflags`"
 	LIBXML2_LIBS="`xml2-config --prefix=$lt_sysroot/usr/ --libs`"
 	LIBS="$LIBXML2_LIBS $LIBS"
 
