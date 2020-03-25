@@ -2936,11 +2936,8 @@ fi
 		if test "$XML2_CONFIG" = "no"; then
 			as_fn_error $? "Missing development package of libxml2." "$LINENO" 5
 		fi
-		if test "$lt_sysroot" = ""; then
-			CFLAGS="`$withval/xml2-config --cflags` $CFLAGS"
-		else
-			CFLAGS="`$withval/xml2-config --cflags --prefix=$lt_sysroot/usr/` $CFLAGS" 
-		LIBXML2_LIBS="`$withval/xml2-config --libs`"
+		CFLAGS="$CFLAGS `$withval/xml2-config --prefix=$lt_sysroot/usr/ --cflags`"
+		LIBXML2_LIBS="`$withval/xml2-config --prefix=$lt_sysroot/usr/ -libs`"
 		LIBS="$LIBXML2_LIBS $LIBS"
 		WITH_LIBXML2="$withval"
 		CONFIGURE_PARAMS="--with-libxml2=$withval $CONFIGURE_PARAMS"
@@ -2995,8 +2992,8 @@ fi
 		if test "$XSLT_CONFIG" != "no"; then
 			as_fn_error $? "Missing xslt-config to get XSLT flags for compilation." "$LINENO" 5
 		fi
-		CFLAGS="`$withval/xslt-config --cflags` $CFLAGS"
-		LIBS="`$withval/xslt-config --libs` $LIBS"
+		CFLAGS="$CFLAGS `$withval/xslt-config --prefix=$lt_sysroot/usr/ --cflags`"
+		LIBS="`$withval/xslt-config --prefix=$lt_sysroot/usr/ --libs` $LIBS"
 		WITH_LIBXSLT="$withval"
 		CONFIGURE_PARAMS="--with-libxslt=$withval $CONFIGURE_PARAMS"
 
@@ -11977,8 +11974,8 @@ fi
 	if test "$XML2_CONFIG" = "no"; then
 		as_fn_error $? "Missing development package of libxml2." "$LINENO" 5
 	fi
-	CFLAGS="`xml2-config --cflags` $CFLAGS"
-	LIBXML2_LIBS="`xml2-config --libs`"
+	CFLAGS="$CFLAGS `xml2-config --prefix=$lt_sysroot/usr/ -cflags`"
+	LIBXML2_LIBS="`xml2-config --prefix=$lt_sysroot/usr/ --libs`"
 	LIBS="$LIBXML2_LIBS $LIBS"
 
 fi
@@ -12068,8 +12065,8 @@ fi
 
 
 		if test "$XSLT_CONFIG" != "no"; then
-			CFLAGS="`xslt-config --cflags` $CFLAGS"
-			LIBS="`xslt-config --libs` $LIBS"
+			CFLAGS="$CFLAGS `xslt-config --prefix=$lt_sysroot/usr/ --cflags`"
+			LIBS="`xslt-config --prefix=$lt_sysroot/usr/ --libs` $LIBS"
 		fi
 	fi
 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for xsltApplyStylesheet in -lxslt" >&5
