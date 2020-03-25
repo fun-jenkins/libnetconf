@@ -2889,40 +2889,6 @@ $as_echo "no" >&6; }
 fi
 
 
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for sysroot" >&5
-$as_echo_n "checking for sysroot... " >&6; }
-
-# Check whether --with-sysroot was given.
-if test "${with_sysroot+set}" = set; then :
-  withval=$with_sysroot;
-else
-  with_sysroot=no
-fi
-
-
-lt_sysroot=
-case ${with_sysroot} in #(
- yes)
-   if test "$GCC" = yes; then
-     lt_sysroot=`$CC --print-sysroot 2>/dev/null`
-   fi
-   ;; #(
- /*)
-   lt_sysroot=`echo "$with_sysroot" | sed -e "$sed_quote_subst"`
-   ;; #(
- no|'')
-   ;; #(
- *)
-   { $as_echo "$as_me:${as_lineno-$LINENO}: result: ${with_sysroot}" >&5
-$as_echo "${with_sysroot}" >&6; }
-   as_fn_error $? "The sysroot must be an absolute path." "$LINENO" 5
-   ;;
-esac
-
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: ${lt_sysroot:-no}" >&5
-$as_echo "${lt_sysroot:-no}" >&6; }
-
-
 
 
 
@@ -6774,6 +6740,40 @@ fi
 
 
 
+
+
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for sysroot" >&5
+$as_echo_n "checking for sysroot... " >&6; }
+
+# Check whether --with-sysroot was given.
+if test "${with_sysroot+set}" = set; then :
+  withval=$with_sysroot;
+else
+  with_sysroot=no
+fi
+
+
+lt_sysroot=
+case ${with_sysroot} in #(
+ yes)
+   if test "$GCC" = yes; then
+     lt_sysroot=`$CC --print-sysroot 2>/dev/null`
+   fi
+   ;; #(
+ /*)
+   lt_sysroot=`echo "$with_sysroot" | sed -e "$sed_quote_subst"`
+   ;; #(
+ no|'')
+   ;; #(
+ *)
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: ${with_sysroot}" >&5
+$as_echo "${with_sysroot}" >&6; }
+   as_fn_error $? "The sysroot must be an absolute path." "$LINENO" 5
+   ;;
+esac
+
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: ${lt_sysroot:-no}" >&5
+$as_echo "${lt_sysroot:-no}" >&6; }
 
 
 
